@@ -120,5 +120,3 @@
 - TDD: Fail → Pass → Refactor loop
 
 ---
-
-Let me know if you'd like flashcards, diagrams, or a printable version of these notes!
