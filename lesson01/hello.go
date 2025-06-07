@@ -2,11 +2,6 @@ package main
 
 import "fmt"
 
-// const spanish = "Spanish"
-// const french = "French"
-// const englishHelloPrefix = "Hello, "
-// const spanishHelloPrefix = "Hola, "
-// const frenchHelloPrefix = "Bonjour, "
 const (
 	spanish = "Spanish"
 	french = "French"
@@ -15,9 +10,6 @@ const (
 	frenchHelloPrefix = "Bonjour, "
 )
 
-// func main() {
-// 	fmt.Println("Hello, World!")
-// }
 
 func Hello() string {
 	return englishHelloPrefix + "World!"
@@ -25,7 +17,6 @@ func Hello() string {
 
 func HelloWithArgs(name string, language string) string {
 
-	// If the name is empty, return a default greeting
 	if name == "" {
 		name = "World"
 	}
