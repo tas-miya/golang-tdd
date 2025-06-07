@@ -1,6 +1,6 @@
 # golang-tdd
 
-### **Lesson 01 - Notes**
+### 📓 **Lesson 01 - Notes**
 
 ### 🟨 **Go Basics**
 
@@ -120,3 +120,44 @@
 - TDD: Fail → Pass → Refactor loop
 
 ---
+
+### 📓**Lesson 02 - Notes**
+
+### 📁 **Project Structure**
+
+- Each package should have its own directory
+- go.mod needs to be in the root directory
+
+---
+
+### 🧪 **Test-Driven Development Using Convey**
+
+- Used Convey instead of standard testing framework
+- Usual TDD steps: test → fail → write minimal code until the test passes → refactor
+
+---
+
+### 💭 **Use Comments for Documentation**
+
+```go
+  // Add takes two integers and return their sum
+  func Add(a, b int) int {
+  	return a + b
+  }
+```
+
+---
+
+### 📘 **Testable Examples**
+
+- They are used to write examples of the usage of the function
+- They are written in the \_test.go file
+
+```go
+  func ExampleAdd() {
+  Convey("Example of Add Function", func() {
+    got := Add(1, 2)
+    So(got, ShouldEqual, 3)
+    })
+  }
+```
