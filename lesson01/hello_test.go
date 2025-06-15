@@ -1,57 +1,43 @@
 package main
 
-import "testing"
+import (
+	"testing"
+	. "github.com/smartystreets/goconvey/convey"
+)
 
 func TestHello(t *testing.T) {
-	got := Hello()
-	want := "Hello, World!"
-
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
+	Convey("Testing Hello() function", t, func() {
+		got := Hello()
+		So(got, ShouldEqual, "Hello World")
+	})
 }
 
 func TestHelloWithArgs(t *testing.T) {
-	got := HelloWithArgs("Chris", "")
-	want := "Hello, Chris!"
-
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
+	Convey("Testing HelloWithArgs() function", t, func() {
+		got := HelloWithArgs("Chris", "")
+		So(got, ShouldEqual, "Hello, Chris!")
+	})
 }
 
 func TestHelloWithEmptyArgs(t *testing.T) {
-	t.Run("saying hello to people", func(t *testing.T) {
+	Convey("saying hello to people", t, func() {
 		got := HelloWithArgs("Chris", "")
-		want := "Hello, Chris!"
-		assertCorrectMessage(t, got, want)
+		So(got, ShouldEqual, "Hello, Chris!")
 	})
-	t.Run("say 'Hello, World!' when supplied with an empty string", func(t *testing.T) {
+	Convey("say 'Hello, World!' when supplied with an empty string", t, func() {
 		got := HelloWithArgs("", "")
-		want := "Hello, World!"
-
-		assertCorrectMessage(t, got, want)
+		So,(got, ShouldEqual, "Hello, World!")
 	})
-	t.Run("in Spanish", func(t *testing.T) {
+	Convey("in Spanish", t, func() {
 		got := HelloWithArgs("Elodie", "Spanish")
-		want := "Hola, Elodie!"
-		assertCorrectMessage(t, got, want)
+		So(got, ShouldEqual, "Hola, Elodie!")
 	})
-	t.Run("without specifying a language", func(t * testing.T) {
+	Convey("without specifying a language", t, func() {
 		got := HelloWithArgs("Elodie", "")
-		want := "Hello, Elodie!"
-		assertCorrectMessage(t, got, want)
+		So(got, ShouldEqual, "Hello, Elodie!")
 	})
-	t.Run("in French", func(t *testing.T) {
+	Convey("in French", t, func() {
 		got := HelloWithArgs("Jules", "French")
-		want := "Bonjour, Jules!"
-		assertCorrectMessage(t, got, want)
+		So(got, ShouldEqual, "Bonjour, Jules!")
 	})
-}
-
-func assertCorrectMessage(t testing.TB, got, want string) {
-	t.Helper()
-	if got != want {
-		t.Errorf("got %q, want %q", got, want)
-	}
 }
